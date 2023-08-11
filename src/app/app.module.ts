@@ -4,12 +4,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbCardModule, NbSidebarModule, NbIconModule, NbMenuModule, NbActionsModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DashboardComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -17,7 +21,12 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
     BrowserAnimationsModule,
     NbThemeModule.forRoot({ name: 'cosmic' }),
     NbLayoutModule,
-    NbEvaIconsModule
+    NbEvaIconsModule,
+    NbIconModule,
+    NbSidebarModule.forRoot(),
+    NbMenuModule.forRoot(),
+    NbCardModule,
+    NbActionsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
